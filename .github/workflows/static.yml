@@ -26,7 +26,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: "privatgt.github.io/"
+      url: "https://privatgt.github.io/"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
