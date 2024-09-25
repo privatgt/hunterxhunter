@@ -19,35 +19,13 @@
           videoId:"DumCjX4qdCE",start:0,end:999999}
     ];
 
-    var textarea = document.getElementById('playlist-object');
-    textarea.value = JSON.stringify(playList);
-
-    var currentId = 0;
-
-    var updateButton = document.getElementById('update-button');
-    updateButton.addEventListener('click', function(event) {
-        var playListString = document.getElementById('playlist-object').value;
-        try {
-            playList = JSON.parse(playListString);
-        }
-        catch (exception) {
-            alert('JSON format error. Please check your input and try again.')
-            return;
-        }
-        currentId = 0;
-        player.loadVideoById({
-            'videoId': playList[currentId].videoId,
-            'startSeconds': playList[currentId].start,
-            'endSeconds': playList[currentId].end
-        });
-    });
-
+ 
     
 
     var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
 
-    var firstScriptTag = document.getElementById("youtube-tracking-script");
+    var firstScriptTag = document.getElementById("player");
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
     var player;
