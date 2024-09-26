@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <body id="igphnf">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hunter x Hunter: Succession Contest - Fan Animation Episode
+    </title>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="./" id="i0ajtf">Episodes</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="episode-title">
+        <h1 id="igrcwc">Hunter x Hunter: Succession Contest
+        </h1>
+        <p id="iw1taz">Chapter 341 Compiled animation
+          <br />
+        </p>
+      </section>
+      <section id="i82yvd" class="video-container">
+        <div id="player">
+        </div>
+      </section>
+      <script>
+        var playList = [
+          {
+            videoId: "YFqCfyBRtrI", start: 0, end: -1
+          }, {
+            videoId: "OwHrCY3INeY",
+            start: 0, end: 112
+          }, {
+            videoId: "7LhYqcigixU", start: 93, end: -1
+          }, {
+            videoId: "4xmez2Mn9lg", start: 0, end: -1
+          }, {
+            videoId: "nR_7wX7UrrQ", start: 0, end: -1
+          }
+        ];
+
+
+
+        var currentId = 0;
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+
+        var firstScriptTag = document.getElementById("player");
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+
+        function onYouTubeIframeAPIReady() {
+          player = new YT.Player('player', {
+            videoId: playList[0].videoId,
+            playerVars: {
+              'autoplay': 0,
+              'start': playList[0].start,
+              'end': playList[0].end
+            },
+            events: {
+              'onStateChange': videoPlay
+            }
+          });
+        }
+
+        var debouncing = false;
+
+        function videoPlay(event) {
+          if (event.data == YT.PlayerState.PLAYING) {
+            debouncing = false;
+            console.log("YouTube Video is PLAYING!!");
+          }
+          if (event.data == YT.PlayerState.PAUSED) {
+            console.log("YouTube Video is PAUSED!!");
+          }
+
+          // after loading next video, before startin the next one, one extra end event will be passed,
+          // so need this debouncing logic
+          if (debouncing)
+            return;
+          if (event.data == YT.PlayerState.ENDED) {
+            debouncing = true;
+            console.log("YouTube Video is ENDING!!");
+            currentId++;
+            if (playList[currentId]) {
+              player.loadVideoById({
+                'videoId': playList[currentId].videoId,
+                'startSeconds': playList[currentId].start,
+                'endSeconds': playList[currentId].end
+              });
+            }
+          }
+        }
+      </script>
+      <section id="ioonqz" class="episode-info">
+        <h2 id="inra8v">Chapter 341
+          <br />
+        </h2>
+        <p id="i1xj3q">The Zodiacs, members of the Hunter Association, engage in a crucial meeting to discuss their upcoming expedition to the Dark Continent. This mission is particularly significant due to the perilous nature of their destination, an unexplored realm filled with unknown dangers. The chapter emphasizes the strategic planning and moral considerations the Zodiacs must navigate as they prepare for this potentially world-changing journey. Their discussions are unexpectedly interrupted by a call from Beyond Netero, a key figure with his own ambitions related to the Dark Continent. This interruption adds a layer of tension and complexity to the already intricate dynamics among the Zodiacs, highlighting the competing interests and hidden agendas at play. 
+        </p>
+        <p>Links:</p>
+        <a href="https://www.youtube.com/watch?v=YFqCfyBRtrI">Hunter x Hunter Opening - Dark Continent Arc [Fan-made]</a><br>
+        <a href="https://www.youtube.com/watch?v=OwHrCY3INeY">Hunter x Hunter is BACK! - Chapter 341 Fan Animation (2022)</a><br>
+        <a href="https://www.youtube.com/watch?v=7LhYqcigixU">Hunter x Hunter – Dark Continent Arc |Chapter 341| Made easy</a><br>
+        <a href="https://www.youtube.com/watch?v=4xmez2Mn9lg">Hunter x Hunter Dark Continent - Five Calamities</a><br>
+        <a href="https://www.youtube.com/watch?v=nR_7wX7UrrQ">HUNTER x HUNTER - Dark Continent Ending (Fanmade)</a><br>
+      </section>
+    </main>
+    <footer id="ikphiu">
+      <p id="ib33sw">Hunter x Hunter Fan Animations
+      </p>
+    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        gsap.from('.episode-title', {
+          opacity: 0, y: -50, duration: 1, ease: 'power3.out'
+        }
+        );
+        gsap.from('.video-container', {
+          opacity: 0, scale: 0.9, duration: 1, delay: 0.5, ease: 'power3.out'
+        }
+        );
+        gsap.from('.episode-info', {
+          opacity: 0, y: 50, duration: 1, delay: 1, ease: 'power3.out'
+        }
+        );
+        gsap.from('.comment', {
+          opacity: 0,
+          x: -50,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.comments-section',
+            start: 'top 80%'
+          }
+        }
+        );
+      }
+      );
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  </body>
+</body>
+
+</html>
