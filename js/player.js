@@ -40,7 +40,7 @@ function onPlayerStateChange(event) {
 
 function handleVideoChange() {
     const currentVideoId = player.getVideoData().video_id;
-    let playindex=playlist.findIndex(item => item.videoId === currentVideoId)
+    let playindex=player.getPlaylistIndex()
     if (playindex!=currentVideoIndex){
     currentVideoIndex = playindex;
     if (currentVideoIndex !== -1) {
