@@ -11,6 +11,7 @@ let currentVideoIndex = 0;
 let player;
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
+        videoId: playlist[0].videoId,
         playerVars: {
         },
         events: {

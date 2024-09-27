@@ -32,6 +32,7 @@
         <div id="player">
         </div>
       </section>
+      <script src="./js/player.js"></script>
       <script>
         var playList = [
           {
@@ -47,60 +48,7 @@
             videoId: "nR_7wX7UrrQ", start: 0, end: -1
           }
         ];
-
-
-
-        var currentId = 0;
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-
-        var firstScriptTag = document.getElementById("player");
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        var player;
-
-        function onYouTubeIframeAPIReady() {
-          player = new YT.Player('player', {
-            videoId: playList[0].videoId,
-            playerVars: {
-              'autoplay': 0,
-              'start': playList[0].start,
-              'end': playList[0].end
-            },
-            events: {
-              'onStateChange': videoPlay
-            }
-          });
-        }
-
-        var debouncing = false;
-
-        function videoPlay(event) {
-          if (event.data == YT.PlayerState.PLAYING) {
-            debouncing = false;
-            console.log("YouTube Video is PLAYING!!");
-          }
-          if (event.data == YT.PlayerState.PAUSED) {
-            console.log("YouTube Video is PAUSED!!");
-          }
-
-          // after loading next video, before startin the next one, one extra end event will be passed,
-          // so need this debouncing logic
-          if (debouncing)
-            return;
-          if (event.data == YT.PlayerState.ENDED) {
-            debouncing = true;
-            console.log("YouTube Video is ENDING!!");
-            currentId++;
-            if (playList[currentId]) {
-              player.loadVideoById({
-                'videoId': playList[currentId].videoId,
-                'startSeconds': playList[currentId].start,
-                'endSeconds': playList[currentId].end
-              });
-            }
-          }
-        }
+        play(playList);
       </script>
       <section id="ioonqz" class="episode-info">
         <h2 id="inra8v">Chapter 341
