@@ -39,11 +39,13 @@ function onPlayerStateChange(event) {
 
 function handleVideoChange() {
     const currentVideoId = player.getVideoData().video_id;
+    if (currentVideoId!=currentVideoIndex){
     currentVideoIndex = playlist.findIndex(item => item.videoId === currentVideoId);
     if (currentVideoIndex !== -1) {
         const currentVideo = playlist[currentVideoIndex];
         player.seekTo(currentVideo.start);
     }
+}
 }
 
 function handleNextVideo() {
