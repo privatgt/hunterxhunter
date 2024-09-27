@@ -8,70 +8,21 @@
   </title><header><nav><ul><li><a href="./" id="i0ajtf">Episodes</a></li></ul></nav></header><main><section class="episode-title"><h1 id="igrcwc">Hunter x Hunter: Succession Contest
       </h1><p id="iw1taz">Chapter 340 Compiled animation
         <br/></p></section><section id="i82yvd" class="video-container"><div id="player">
-      </div></section><script>
+      </div></section>
+      <script src="./js/player.js"></script>
+      <script>
      var playList = [
         {
           videoId:"e8U0gR8qlQo",start:0,end:-1},{
           videoId:"Eyw0IfrSRKE",
           start:46,end:104},{
+            videoId:"H7zsEayrGyI",start:0,end:-1},{
           videoId:"DB6QrHRg2mk",start:0,end:-1},{
           videoId:"J3DTs1fTU-I",start:67,end:372},{
           videoId:"DumCjX4qdCE",start:0,end:-1}
     ];
 
- 
-    
-var currentId = 0;
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-
-    var firstScriptTag = document.getElementById("player");
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    var player;
-
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-            videoId: playList[0].videoId,
-            playerVars: {
-                'autoplay': 0,
-                'start': playList[0].start,
-                'end': playList[0].end
-            },
-            events: {
-                'onStateChange': videoPlay
-            }
-        });
-    }
-
-    var debouncing = false;
-
-    function videoPlay(event) {
-        if (event.data == YT.PlayerState.PLAYING) {
-            debouncing = false;
-            console.log("YouTube Video is PLAYING!!");
-        }
-        if (event.data == YT.PlayerState.PAUSED) {
-            console.log("YouTube Video is PAUSED!!");
-        }
-
-        // after loading next video, before startin the next one, one extra end event will be passed,
-        // so need this debouncing logic
-        if ( debouncing )
-            return;
-        if ( event.data == YT.PlayerState.ENDED ) {
-            debouncing = true;
-            console.log("YouTube Video is ENDING!!");
-            currentId++;
-            if ( playList[currentId] ) {
-                player.loadVideoById({
-                    'videoId': playList[currentId].videoId,
-                    'startSeconds': playList[currentId].start,
-                    'endSeconds': playList[currentId].end
-                });
-            }
-        }
-    }
+ play(playList)
     </script><section id="ioonqz" class="episode-info"><h2 id="inra8v">Chapter 340
         <br/></h2><p id="i1xj3q">The Zodiacs' meeting is interrupted by Beans, who presents a video of Kakin's King Nasubi announcing an expedition to the Dark Continent, a mysterious and dangerous place outside the known world. The Zodiacs discuss the implications, explaining that previous attempts to explore the Dark Continent resulted in disasters, leading to a treaty by the V5 nations to avoid it. However, Kakin, as a relatively new nation, may not be bound by this agreement. The situation becomes more complex when Nasubi reveals that Beyond Netero, son of the former Hunter Association chairman Isaac Netero, will lead the expedition, catching the Zodiacs off guard.
       </p>
