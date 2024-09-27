@@ -29,6 +29,12 @@ function onPlayerReady(event) {
     const videoIds = playlist.map(item => item.videoId);
     player.loadPlaylist(videoIds, 0, playlist[0].start);
     player.playVideo();
+    if (playlist[currentVideoIndex].caption === 1) {
+                    player.loadModule("captions");
+                    player.setOption("captions", "track", {"languageCode": "en"});
+                } else {
+                    player.unloadModule("captions");
+                }
 }
 
 function onPlayerStateChange(event) {
@@ -50,6 +56,12 @@ function handleVideoChange() {
     if (currentVideoIndex !== -1) {
         const currentVideo = playlist[currentVideoIndex];
         player.seekTo(currentVideo.start);
+        if (playlist[currentVideoIndex].caption === 1) {
+                    player.loadModule("captions");
+                    player.setOption("captions", "track", {"languageCode": "en"});
+                } else {
+                    player.unloadModule("captions");
+                }
     }
 }
 }
@@ -59,6 +71,12 @@ function handleNextVideo() {
     if (currentVideoIndex < playlist.length) {
         player.playVideoAt(currentVideoIndex);
         setTimeout(() => player.seekTo(playlist[currentVideoIndex].start), 10);
+        if (playlist[currentVideoIndex].caption === 1) {
+                    player.loadModule("captions");
+                    player.setOption("captions", "track", {"languageCode": "en"});
+                } else {
+                    player.unloadModule("captions");
+                }
     } else {
         stopTimeCheck();
         player.stopVideo();
