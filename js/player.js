@@ -15,7 +15,8 @@ function onYouTubeIframeAPIReady() {
         playerVars: {
             modestbranding: 1,
             rel: 0,
-            showinfo: 0
+            showinfo: 0,
+            cc_lang_pref:"en"
         },
         events: {
             'onReady': onPlayerReady,
