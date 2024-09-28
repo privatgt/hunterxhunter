@@ -101,10 +101,9 @@ function stopTimeCheck() {
 function checkTime() {
     const currentTime = player.getCurrentTime();
     const currentVideo = playlist[currentVideoIndex];
-    console.log(currentVideoIndex,currentTime)
     if (currentTime >= currentVideo.end && currentVideo.end!=-1) {
         handleNextVideo();
-        console.log(true)
+        console.log(true,currentVideoIndex,currentTime)
     } else if (currentTime < currentVideo.start) {
         player.seekTo(currentVideo.start);
     }
