@@ -78,6 +78,7 @@ function handleNextVideo() {
                 } else {
                     player.unloadModule("captions");
         }
+        setTimeout(() => startTimeCheck(),1000);
         console.log(currentVideoIndex)
     } else {
         stopTimeCheck();
