@@ -67,6 +67,7 @@ function handleVideoChange() {
 }
 
 function handleNextVideo() {
+    stopTimeCheck();
     currentVideoIndex++;
     if (currentVideoIndex < playlist.length) {
         player.playVideoAt(currentVideoIndex);
@@ -77,6 +78,7 @@ function handleNextVideo() {
                 } else {
                     player.unloadModule("captions");
                 }
+        startTimeCheck()
     } else {
         stopTimeCheck();
         player.stopVideo();
