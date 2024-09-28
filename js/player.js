@@ -70,7 +70,7 @@ function handleNextVideo() {
     currentVideoIndex++;
     if (currentVideoIndex < playlist.length) {
         player.playVideoAt(currentVideoIndex);
-        setTimeout(() => player.seekTo(playlist[currentVideoIndex].start), 10);
+        setTimeout(() => player.seekTo(playlist[currentVideoIndex].start), 1000);
         if (playlist[currentVideoIndex].caption === 1) {
                     player.loadModule("captions");
                     player.setOption("captions", "track", {"languageCode": "en"});
