@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <body id="igphnf">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hunter x Hunter: Succession Contest - Fan Animation Episode
+    </title>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="./" id="i0ajtf">Episodes</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="episode-title">
+        <h1 id="igrcwc">Hunter x Hunter: Succession Contest
+        </h1>
+        <p id="iw1taz">Chapter 342 Compiled animation
+          <br />
+        </p>
+      </section>
+      <section id="i82yvd" class="video-container">
+        <div id="player">
+        </div>
+      </section>
+      <script src="./js/player.js"></script>
+      <script>
+        var playList = [
+          {
+            videoId: "YFqCfyBRtrI", start: 0, end: -1
+          }, {
+            videoId: "LoR9qea_4LI",
+            start: 542, end: 620
+          }, {
+            videoId: "nBW41NZdSsM", start: 0, end: -1
+          }, {
+            videoId: "LoR9qea_4LI", start: 620, end: 955
+          },{
+            videoId: "pffXpJ8TR40", start: 0, end: 70,caption:1
+          }, {
+            videoId: "DumCjX4qdCE", start: 0, end: -1
+          }
+        ];
+        play(playList);
+      </script>
+      <section id="ioonqz" class="episode-info">
+        <h2 id="inra8v">Chapter 342
+          <br />
+        </h2>
+        <p id="i1xj3q">
+          The story intensifies with complex political maneuvering centered around the upcoming Dark Continent expedition. Beyond Netero, now in custody, proposes a deal to the Zodiacs, offering to let them escort him to the Dark Continent under surveillance while he plans to eliminate his own allies. This proposal sparks intense discussions among the Zodiacs about the mission's challenges and potential benefits for humanity. Meanwhile, Ging Freecss suggests that Pariston Hill join Beyond's team, adding another layer of strategic complexity. Cheadle agrees to Beyond's proposal but emphasizes careful planning, and informs the V5 about Beyond's capture. The chapter concludes with a tense exchange between Ging and Pariston, hinting at future conflicts and the potential involvement of Chimera Ants in their power struggle. These developments set the stage for a politically charged and potentially dangerous expedition to the Dark Continent.
+        </p>
+        <p>Links:</p>
+        <a href="https://www.youtube.com/watch?v=YFqCfyBRtrI">Hunter x Hunter Opening - Dark Continent Arc [Fan-made]</a><br>
+        <a href="https://www.youtube.com/watch?v=LoR9qea_4LI">The ENTIRE Hunter x Hunter Dark Continent Arc Explained...</a><br>
+        <a href="https://www.youtube.com/watch?v=nBW41NZdSsM">HUNTER X HUNTER DARK CONTINENT PROLOG - Hunter x Hunter Fan Animation</a><br>
+        <a href="https://www.youtube.com/watch?v=pffXpJ8TR40">Ging & Pariston HunterxHunter 342  - Hunter x Hunter Fan Animation</a><br>
+        <a href="https://www.youtube.com/watch?v=DumCjX4qdCE">Hunter x Hunter Fanmade Ending "Kitakaze" (BNHA 6 ED 2)</a><br>
+      </section>
+    </main>
+    <footer id="ikphiu">
+      <p id="ib33sw">Hunter x Hunter Fan Animations
+      </p>
+    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        gsap.from('.episode-title', {
+          opacity: 0, y: -50, duration: 1, ease: 'power3.out'
+        }
+        );
+        gsap.from('.video-container', {
+          opacity: 0, scale: 0.9, duration: 1, delay: 0.5, ease: 'power3.out'
+        }
+        );
+        gsap.from('.episode-info', {
+          opacity: 0, y: 50, duration: 1, delay: 1, ease: 'power3.out'
+        }
+        );
+        gsap.from('.comment', {
+          opacity: 0,
+          x: -50,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.comments-section',
+            start: 'top 80%'
+          }
+        }
+        );
+      }
+      );
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  </body>
+</body>
+
+</html>
