@@ -70,7 +70,7 @@ function handleNextVideo() {
     currentVideoIndex++;
     if (currentVideoIndex < playlist.length) {
         player.playVideoAt(currentVideoIndex);
-        player.seekTo(playlist[currentVideoIndex].start)
+        setTimeout(() => player.seekTo(playlist[currentVideoIndex].start), 10);
         if (playlist[currentVideoIndex].caption === 1) {
                     player.loadModule("captions");
                     player.setOption("captions", "track", {"languageCode": "en"});
@@ -101,6 +101,7 @@ function checkTime() {
 
     if (currentTime >= currentVideo.end && currentVideo.end!=-1) {
         handleNextVideo();
+        console.log(true)
     } else if (currentTime < currentVideo.start) {
         player.seekTo(currentVideo.start);
     }
